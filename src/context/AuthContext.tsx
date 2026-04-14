@@ -116,6 +116,16 @@ useEffect(() => {
     };
   }, [fetchProfile]);
 
+useEffect(() => {
+  if (window.location.hash.includes("access_token")) {
+    window.history.replaceState(
+      {},
+      document.title,
+      window.location.pathname + "#/home"
+    );
+  }
+}, []);
+
   // ✅ Sign up
   const signUp = async (
   email: string,
