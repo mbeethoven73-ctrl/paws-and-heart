@@ -19,7 +19,7 @@ import Profile from './screens/Profile';
 import Favorites from './screens/Favorites';
 import BottomNav from './components/BottomNav';
 import ProtectedRoute from './components/ProtectedRoute';
-
+import { HashRouter } from "react-router-dom"
 export default function App() {
   const navigate = useNavigate();
   const location = useLocation();
@@ -38,6 +38,7 @@ export default function App() {
     <ToastProvider>
       <AuthProvider>
         <div className="min-h-screen bg-background text-on-surface font-body pb-24">
+        <HashRouter>
         <Routes>
           <Route path="/" element={<Landing onNavigate={handleNavigate} />} />
           <Route path="/login" element={<Login onNavigate={handleNavigate} />} />
@@ -68,6 +69,7 @@ export default function App() {
             </ProtectedRoute>
           } />
         </Routes>
+        </HashRouter>
         
         {['home', 'search', 'favorites', 'profile'].includes(currentScreen) && (
           <BottomNav currentScreen={currentScreen} onNavigate={handleNavigate} />
