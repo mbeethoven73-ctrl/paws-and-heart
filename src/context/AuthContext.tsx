@@ -135,7 +135,7 @@ useEffect(() => {
         },
         // ADD THIS: This prevents the SDK from automatically 
         // signing the user in before they confirm their email.
-        emailRedirectTo: `${window.location.origin}/home`, 
+       emailRedirectTo: "https://mbeethoven73-ctrl.github.io/paws-and-heart/#/home",
       },
     });
 
